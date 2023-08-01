@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { close, logo, menu } from '../assets';
+import { close, g, menu } from '../assets';
 import { Link } from "react-router-dom";
 import { navLinks } from '../constants';
 
@@ -9,7 +9,7 @@ const Navbar = () => {
 
     return (
         <nav className="w-full flex py-6 justify-between items-center navbar">
-          {/* <img src={logo} alt="hoobank" className="w-[124px] h-[32px]"/>  */}
+          {/* <img src={g} alt="giveforgood" className="w-[124px] h-[32px]"/>  */}
             <p className="font-bold text-xl text-white">GiveForFood</p>
           <ul className="list-none sm:flex hidden justify-end items-center flex-1">
             {navLinks.map((nav, index) =>(
