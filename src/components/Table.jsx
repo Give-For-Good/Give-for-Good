@@ -46,6 +46,7 @@ const Table = () => {
     const dispatch = useDispatch()
 
     const [data, setData] = useState('')
+    const [loading, setLoading] = useState(true)
     const rerender = React.useReducer(() => ({}), {})[1]
   
     const table = useReactTable({
@@ -84,6 +85,7 @@ const Table = () => {
         console.log(`${upload.name} - cid: ${upload.cid} - size: ${upload.dagSize}`)
       }
       setData(listItems)
+      setLoading(false) //Data fething is complete
   }
 
 
@@ -102,41 +104,46 @@ const Table = () => {
       <div className="flex-1 flex flex-col bg-black-gradient-2">
       <h2 className={styles.heading2}>Applicants for Fund.</h2>
       <div className="p-2 w-full flex flex-col items-center">
-      <table cellPadding={20} border={10} className="border border-black">
-        <thead>
-          {table.getHeaderGroups().map(headerGroup => (
-            <tr  className="border border-black" key={headerGroup.id}>
-              {headerGroup.headers.map(header => (
-                <th key={header.id} className={styles.paragraphtwo}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext()
-                      )}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
-          {table.getRowModel().rows.map(row => (
-            <tr className="border border-black hover:cursor-pointer" key={row.id}>
-              {row.getVisibleCells().map(cell => (
-                <td className={styles.paragraph} onClick={() =>{ 
-                    handleData(cell.getContext())
-                    navigate("/user")
-                }
-                    } key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      
+{/*Show loading indicator*/}
+{loading ? (<div className={styles.paragraph}>Loading...</div>): (
+  <table cellPadding={20} border={10} className="border border-black">
+  <thead>
+ {table.getHeaderGroups().map(headerGroup => (
+  <tr  className="border border-black" key={headerGroup.id}>
+    {headerGroup.headers.map(header => (
+      <th key={header.id} className={styles.paragraphtwo}>
+        {header.isPlaceholder
+          ? null
+          : flexRender(
+              header.column.columnDef.header,
+              header.getContext()
+            )}
+      </th>
+    ))}
+  </tr>
+))}
+</thead>
+<tbody>
+{table.getRowModel().rows.map(row => (
+  <tr className="border border-black hover:cursor-pointer" key={row.id}>
+    {row.getVisibleCells().map(cell => (
+      <td className={styles.paragraph} onClick={() =>{ 
+          handleData(cell.getContext())
+          navigate("/user")
+      }
+          } key={cell.id}>
+        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+      </td>
+    ))}
+  </tr>
+))}
+</tbody>
+</table>
+)}
+         
       <div className="h-4" />
-      <button onClick={() => rerender()} className="border p-2">
+      <button onClick={() => setLoading(true)} className="border p-2">
         <p className={styles.paragraph}> Rerender</p>
        
       </button>
