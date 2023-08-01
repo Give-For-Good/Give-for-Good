@@ -107,7 +107,7 @@ const Table = () => {
           {table.getHeaderGroups().map(headerGroup => (
             <tr  className="border border-black" key={headerGroup.id}>
               {headerGroup.headers.map(header => (
-                <th key={header.id}>
+                <th key={header.id} className={styles.paragraphtwo}>
                   {header.isPlaceholder
                     ? null
                     : flexRender(
@@ -123,7 +123,7 @@ const Table = () => {
           {table.getRowModel().rows.map(row => (
             <tr className="border border-black hover:cursor-pointer" key={row.id}>
               {row.getVisibleCells().map(cell => (
-                <td onClick={() =>{ 
+                <td className={styles.paragraph} onClick={() =>{ 
                     handleData(cell.getContext())
                     navigate("/user")
                 }
@@ -137,12 +137,12 @@ const Table = () => {
       </table>
       <div className="h-4" />
       <button onClick={() => rerender()} className="border p-2">
-        Rerender
+        <p className={styles.paragraph}> Rerender</p>
+       
       </button>
     </div>
         <form >
         
-          {/* <button onClick={handleGenerate} className={`py-4 mt-3 px-6 bg-blue-gradient font-poppins font-medium text-[18px] text-primary outline-none ${styles} rounded-[10px] `}>Generate</button> */}
         
         </form>
     </div>
