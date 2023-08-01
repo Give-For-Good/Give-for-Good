@@ -1,14 +1,15 @@
 import { useState } from "react";
-import { close, g, menu } from '../assets';
+import { close,  menu } from '../assets';
 import { Link } from "react-router-dom";
 import { navLinks } from '../constants';
+// import g from '../../public';
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
 
     return (
         <nav className="w-full flex py-6 justify-between items-center navbar">
-          <img src={g} alt="giveforgood" className="w-[124px] h-[32px]"/> 
+          <img src='./g.png' alt="giveforgood" className="w-[50px] h-[50px]"/> 
             <p className="font-bold text-xl text-white">GiveForFood</p>
           <ul className="list-none sm:flex hidden justify-end items-center flex-1">
             {navLinks.map((nav, index) =>(
