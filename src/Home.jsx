@@ -9,7 +9,7 @@ const Home = () => {
           <Navbar />
         </div>
 
-      <div className={`bg-primary ${styles.flexStart}`}>
+      <div className={`bg-primary mt-0 ${styles.flexStart}`}>
         <div className={`$styles.boxWidth`}>
           <Hero />
         </div>
