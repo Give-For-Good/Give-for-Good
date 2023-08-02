@@ -11,11 +11,9 @@ const User = () => {
 
   return (
     <div className="bg-primary w-full overflow-hidden bg-black-gradient">
-      <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-        <div className={`${styles.boxWidth}`}>
+        <div className="bg-black px-12">
           <Navbar />
         </div>
-      </div>
       <div className={`bg-primary ${styles.paddingX} ${styles.flexStart} h-screen`}>
         <div className={`${styles.boxWidth}`}>
         <div className="flex justify-center w-full py-2">
