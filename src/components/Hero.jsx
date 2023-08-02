@@ -42,8 +42,12 @@ const Hero = () => {
           alt="robot"
           className="w-[400px] h-[400px] mt-2 relative z-[5]"
         />
-        <div className="absolute z-[0] h-[35%] w-[40%] top-0 pink__gradient" />
-        <div className="absolute z-[1] h-[85%] w-[80%] bottom-40 rounded-full white__gradient" />
+
+        {/* Gradients */}
+
+        {/* <div className="absolute z-[0] h-[35%] w-[40%] top-0 pink__gradient" /> */}
+        {/* <div className="absolute z-[1] h-[85%] w-[80%] bottom-40 rounded-full white__gradient" /> */}
+        <div className="absolute z-[0] h-[50%] w-[50%] right-20 bottom-20 blue__gradient" />
         <div className="absolute z-[0] h-[50%] w-[50%] right-20 bottom-20 blue__gradient" />
       </div>
 
