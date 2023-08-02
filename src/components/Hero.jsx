@@ -26,9 +26,9 @@ const Hero = () => {
         </div>
 
         <p className={`${styles.paragraph} max-w-[470px] mt-5 font-poppins`}>
-          Empowering crowdfunding with the Blockchain Technology. Join us to
-          fund projects of all calibers with confidence and clarity, thanks to
-          the secure and traceable nature of the Blockchain Technology.
+          Empowering crowdfunding with the Blockchain Technology. Fund projects
+          with confidence, thanks to the power of the Blockchain
+          Technology.
         </p>
       </div>
 
