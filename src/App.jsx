@@ -7,6 +7,7 @@ import RegisterFund from "./pages/RegisterFund";
 import {BrowserRouter as   Router, Routes, Route} from 'react-router-dom';
 import { Provider } from "react-redux";
 import store from "./state/store";
+import Dashboard from "./pages/Dashboard";
 
 const App = () => {
    return(
@@ -18,6 +19,7 @@ const App = () => {
         <Route path='/registerfund' element={<RegisterFund/>}/>
         <Route path="/users" element={<Users/>}/>
         <Route path="/user" element={<User/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
     </Routes>
     </Router>
 </Provider>

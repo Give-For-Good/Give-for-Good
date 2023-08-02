@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
 import Billing from "./Billing";
 import CardDeal from "./CardDeal";
 import Business from "./Business";
@@ -12,6 +13,7 @@ import ListTable from "./ListTable";
 
 export {
   Navbar,
+  Sidebar,
   Billing,
   CardDeal,
   Business,

@@ -15,8 +15,53 @@ import {
   send,
   shield,
   star,
+  sun,
+  createCampaign, 
+  dashboard, 
+  logout, 
+  payment, 
+  profile, 
+  withdraw
 } from "../assets";
 
+// Navlinks Dashboard
+export const navlinks = [
+  {
+    name: 'dashboard',
+    imgUrl: dashboard,
+    link: '/',
+  },
+  {
+    name: 'campaign',
+    imgUrl: createCampaign,
+    link: '/create-campaign',
+  },
+  {
+    name: 'payment',
+    imgUrl: payment,
+    link: '/',
+    disabled: true,
+  },
+  {
+    name: 'withdraw',
+    imgUrl: withdraw,
+    link: '/',
+    disabled: true,
+  },
+  {
+    name: 'profile',
+    imgUrl: profile,
+    link: '/profile',
+  },
+  {
+    name: 'logout',
+    imgUrl: logout,
+    link: '/',
+    disabled: true,
+  },
+];
+
+// Navlinks main
 export const navLinks = [
   {
     id: "",
