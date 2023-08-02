@@ -18,7 +18,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState("dashboard");
   return (
-    <div className="flex pl-3 pt-3 flex-col sticky top-5 h-[93vh]">
+    <div className="flex pl-3 pt-3 justify-between flex-col sticky top-5 h-[93vh]">
       <Link to="/">
         <Icon styles="w-[60px] h-[60px] bg-[#2c2f32]" imgUrl={g} />
       </Link>
