@@ -34,6 +34,10 @@ export const navLinks = [
     id: "users",
     title: "Users",
   },
+  {
+    id: "Connect",
+    title: "Connect Wallet",
+  },
 
 ];
 

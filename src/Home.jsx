@@ -1,36 +1,28 @@
 import React from "react";
-import styles  from "./style";
-
-import {Navbar, Hero , Business ,Footer } from "./components";
-import Forms from "./components/Forms";
-import ListTable from "./components/ListTable";
-
+import styles from "./style";
+import { Navbar, Hero, Business, Footer } from "./components";
 
 const Home = () => {
-   return(
-  <div className="bg-primary w-full overflow-hidden bg-black-gradient">
-         <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-         <div className={`${styles.boxWidth}`}>
-              < Navbar />
-         </div>
-         </div>
+  return (
+    <div className="bg-black w-full overflow-hidden bg-black-gradient">
+        <div className="bg-black px-12">
+          <Navbar />
+        </div>
 
-         <div className={`bg-primary ${styles.flexStart}`}>
-           <div className={`$styles.boxWidth`}>
-              < Hero />              
-           </div>
-         </div>
+      <div className={`bg-primary mt-0 ${styles.flexStart}`}>
+        <div className={`$styles.boxWidth`}>
+          <Hero />
+        </div>
+      </div>
 
-         <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
-           <div className={`${styles.boxWidth}`}>
-              < Business />
-              < Footer />
-           </div>
-         </div>
-
-
+      <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Business />
+          <Footer />
+        </div>
+      </div>
     </div>
-   )
-}
+  );
+};
 
-export default Home
+export default Home;
