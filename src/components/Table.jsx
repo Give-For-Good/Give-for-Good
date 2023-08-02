@@ -1,4 +1,6 @@
 import styles from "../style";
+import {motion} from "framer-motion";
+
 import React, { useState, useEffect} from "react";
 import {
     createColumnHelper,
@@ -38,6 +40,48 @@ footer: info => info.column.id,
 }),
 ]
 
+//loading idicator
+const loadingContainer = {
+  width: "4rem",
+  height: "4rem",
+  display: "flex",
+  justifyContent: "space-around",
+};
+
+const loadingCircle = {
+  display: "block",
+  width: "1rem",
+  height: "1rem",
+  backgroundColor: "#3A36DB",
+  borderRadius: "0.5rem",
+}; 
+
+const loadingContainerVariants = {
+  start: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+  end: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+const loadingCircleVariants = {
+  start: {
+    y: "0%",
+  },
+  end: {
+    y: "60%",
+  },
+};
+const loadingCircleTransition = {
+  duration : 0.4,
+  yoyo : Infinity,
+  ease: 'easeInOut'
+}
+//end of loading indicator
 
 const Table = () => {
 
@@ -47,7 +91,7 @@ const Table = () => {
 
     const [data, setData] = useState('')
     const [loading, setLoading] = useState(true)
-    const rerender = React.useReducer(() => ({}), {})[1]
+    
   
     const table = useReactTable({
       data,
@@ -106,7 +150,28 @@ const Table = () => {
       <div className="p-2 w-full flex flex-col items-center">
       
 {/*Show loading indicator*/}
-{loading ? (<div className={styles.paragraph}>Loading...</div>): (
+{loading ? (<motion.div 
+style={loadingContainer}
+variants={loadingContainerVariants}
+initial="start"
+animate="end"
+>
+  <motion.span
+            style={loadingCircle}
+            variants={loadingCircleVariants}
+            transition={loadingCircleTransition}
+          ></motion.span>
+          <motion.span
+            style={loadingCircle}
+            variants={loadingCircleVariants}
+            transition={loadingCircleTransition}
+          ></motion.span>
+          <motion.span
+            style={loadingCircle}
+            variants={loadingCircleVariants}
+            transition={loadingCircleTransition}
+          ></motion.span>
+</motion.div>): (
   <table cellPadding={20} border={10} className="border border-black">
   <thead>
  {table.getHeaderGroups().map(headerGroup => (
