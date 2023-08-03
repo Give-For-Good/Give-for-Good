@@ -150,7 +150,7 @@ const Table = () => {
 
   return (
     <section className={`${styles.flexCenter} ${styles.marginY} ${styles.padding} sm:flex-row flex-col bg-black-gradient-2 rounded-[20px] box-shadow w-full`}>
-      <div className="flex-1 flex flex-col bg-black-gradient-2">
+      <div className="flex-1 flex flex-col bg-black-gradient-1">
       <div className="p-2 w-full flex flex-col items-center">
       
 {/*Show loading indicator*/}
