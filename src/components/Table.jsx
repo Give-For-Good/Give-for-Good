@@ -58,11 +58,13 @@ const loadingCircle = {
 
 const loadingContainerVariants = {
   start: {
+    opacity: 0,
     transition: {
       staggerChildren: 0.2,
     },
   },
   end: {
+    opacity: 1,
     transition: {
       staggerChildren: 0.2,
     },
@@ -70,15 +72,18 @@ const loadingContainerVariants = {
 };
 const loadingCircleVariants = {
   start: {
+    opacity: 0.3,
     y: "0%",
   },
   end: {
-    y: "60%",
+    opacity: 1,
+    y: "100%",
   },
 };
 const loadingCircleTransition = {
   duration : 0.4,
-  yoyo : Infinity,
+  repeat : Infinity,
+  repeatType : "reverse",
   ease: 'easeInOut'
 }
 //end of loading indicator
