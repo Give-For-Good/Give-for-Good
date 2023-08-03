@@ -212,9 +212,8 @@ animate="end"
 )}
          
       <div className="h-4" />
-      <button onClick={() => setLoading(true)} className="border p-2">
-        <p className={styles.paragraph}> Rerender</p>
-       
+      <button style={{cursor: "pointer"}} onClick={() => setLoading(true)} className={`${styles.paragraph} border p-2`}>
+        Refresh       
       </button>
     </div>
         <form >
