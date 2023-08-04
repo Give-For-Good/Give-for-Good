@@ -8,10 +8,6 @@ const CTA = () => {
       <h2 className={styles.heading2}>This is our Banner</h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>This is where we would be displaying heavy info,... like an alert to users opening the page</p>
     </div>
-
-    <div className={`${styles.flexCenter} sm:ml-10 ml-0 ss:mt-0 mt-10`}>
-      <Button />
-    </div>
     </section>
   )
 }

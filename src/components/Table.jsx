@@ -52,19 +52,17 @@ const loadingCircle = {
   display: "block",
   width: "1rem",
   height: "1rem",
-  backgroundColor: "#54dae2",
+  backgroundColor: "#3A36DB",
   borderRadius: "0.5rem",
 }; 
 
 const loadingContainerVariants = {
   start: {
-    opacity: 0,
     transition: {
       staggerChildren: 0.2,
     },
   },
   end: {
-    opacity: 1,
     transition: {
       staggerChildren: 0.2,
     },
@@ -72,18 +70,15 @@ const loadingContainerVariants = {
 };
 const loadingCircleVariants = {
   start: {
-    opacity: 0.3,
     y: "0%",
   },
   end: {
-    opacity: 1,
-    y: "100%",
+    y: "60%",
   },
 };
 const loadingCircleTransition = {
   duration : 0.4,
-  repeat : Infinity,
-  repeatType : "reverse",
+  yoyo : Infinity,
   ease: 'easeInOut'
 }
 //end of loading indicator
@@ -150,7 +145,8 @@ const Table = () => {
 
   return (
     <section className={`${styles.flexCenter} ${styles.marginY} ${styles.padding} sm:flex-row flex-col bg-black-gradient-2 rounded-[20px] box-shadow w-full`}>
-      <div className="flex-1 flex flex-col bg-black-gradient-1">
+      <div className="flex-1 flex flex-col bg-black-gradient-2">
+      <h2 className={styles.heading2}>Applicants for Fund.</h2>
       <div className="p-2 w-full flex flex-col items-center">
       
 {/*Show loading indicator*/}
@@ -212,8 +208,9 @@ animate="end"
 )}
          
       <div className="h-4" />
-      <button style={{cursor: "pointer"}} onClick={() => setLoading(true)} className={`${styles.paragraph} border p-2`}>
-        Refresh       
+      <button onClick={() => setLoading(true)} className="border p-2">
+        <p className={styles.paragraph}> Rerender</p>
+       
       </button>
     </div>
         <form >
