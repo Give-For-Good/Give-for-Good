@@ -52,17 +52,19 @@ const loadingCircle = {
   display: "block",
   width: "1rem",
   height: "1rem",
-  backgroundColor: "#3A36DB",
+  backgroundColor: "#54dae2",
   borderRadius: "0.5rem",
 }; 
 
 const loadingContainerVariants = {
   start: {
+    opacity: 0,
     transition: {
       staggerChildren: 0.2,
     },
   },
   end: {
+    opacity: 1,
     transition: {
       staggerChildren: 0.2,
     },
@@ -70,16 +72,19 @@ const loadingContainerVariants = {
 };
 const loadingCircleVariants = {
   start: {
+    opacity: 0.3,
     y: "0%",
   },
   end: {
-    y: "60%",
+    opacity: 1,
+    y: "100%",
   },
 };
 const loadingCircleTransition = {
   duration : 0.4,
-  yoyo : Infinity,
-  ease: 'easeInOut'
+  repeat : Infinity,
+  ease: 'easeInOut',
+  repeatType: "reverse",
 }
 //end of loading indicator
 
@@ -91,6 +96,7 @@ const Table = () => {
 
     const [data, setData] = useState('')
     const [loading, setLoading] = useState(true)
+    const [isloading, setIsLoading] = useState(true)
     
   
     const table = useReactTable({
@@ -101,6 +107,8 @@ const Table = () => {
 
     useEffect(() => {
         fetchFunction();
+
+        setIsLoading(false);  
     }, [])
 
   
