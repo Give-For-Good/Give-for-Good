@@ -12,11 +12,6 @@ const Campaign = () => {
       <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
           <CTA />
-          <Clients />
-          <Clients />
-          <Clients />
-          <Clients />
-          <Clients />
           <Footer />
         </div>
       </div>
